@@ -11,12 +11,12 @@ const Main = () => {
     const { balance } = useContext(ExpenseTrackerContext);
   return (
     <Card className={classes.root} >
-        {/* <CardHeader title="Expense Tracker" subheader="Powered by Speechly" /> */}
-        <CardHeader title="Expense Tracker"/>
+        <CardHeader title="Expense Tracker" subheader="Powered by Speechly" />
+        {/* <CardHeader title="Expense Tracker"/> */}
         <CardContent>
             <Typography align='center' variant='h5' >Total Balance ${balance}</Typography>
             <Typography variant='subtitle1' style={{ lineHeight:'1.5em', marginTop:'20px' }} >
-                {/* <InfoCard/> */}
+                <InfoCard/>
             </Typography>
             <Divider className={classes.cardContent}/>
             <Form/>

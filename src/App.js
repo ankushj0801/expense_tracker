@@ -1,6 +1,6 @@
 import React , { useRef, useEffect} from 'react';
 import {Grid } from '@material-ui/core';
-// import { PushToTalkButton, PushToTalkButtonContainer, ErrorPanel } from '@speechly/react-ui';
+import { PushToTalkButton, PushToTalkButtonContainer, ErrorPanel } from '@speechly/react-ui';
 import { SpeechState, useSpeechContext } from '@speechly/react-client';
 import Details from './components/Details/Details';
 import Main from './components/Main/Main';
@@ -16,11 +16,11 @@ const App = () => {
       main.current.scrollIntoView();
     }
 
-    // useEffect(()=>{
-    //   if(speechState===SpeechState.Recording){
-    //     executeScroll();
-    //   }
-    // },[speechState]);
+    useEffect(()=>{
+      if(speechState===SpeechState.Recording){
+        executeScroll();
+      }
+    },[speechState]);
   return (
     <>
       <Grid className={classes.grid} container spacing={0} alignItems='center' justifyContent='center' style={{height:'100vh'}} >
@@ -37,9 +37,10 @@ const App = () => {
             <Details title="Expense" />
         </Grid>
       </Grid>
-      {/* <PushToTalkButtonContainer>
+      <PushToTalkButtonContainer>
         <PushToTalkButton/>
-      </PushToTalkButtonContainer> */}
+        <ErrorPanel/>
+      </PushToTalkButtonContainer>
     </>
   )
 }
